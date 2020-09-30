@@ -1,0 +1,231 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 14px;
+    color: #7f7f7f;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    border-bottom: 1px solid #edf0f4;
+    box-shadow: 0px 0.1px 0.1px #dddddd ;
+  /*  background-color: white;*/
+}
+
+.navbar .container {
+    width: 1000px;
+    margin: auto;
+   /*GRID*/
+   display: grid;
+   grid-template-columns: repeat(11, auto);
+
+}
+
+a { text-align: center;
+    text-decoration: none;
+    color: #343a40;
+
+}
+a:hover {
+    color: #007bff;
+}
+a.item {
+    text-align: center;
+    line-height: 60px;
+    vertical-align: middle;
+}
+a.item:nth-child(2) {
+grid-column-start: 4;
+}
+.navbar .container a.action {
+    width: 100px;
+    height: 20px;
+    grid-column-start: 11;
+    text-align: center;
+    padding: 7px 0;
+    border: 1px solid #007bff;
+    border-radius: 30px;
+    background-color: #fff;
+    transform: translateY(12px);
+    
+}
+
+.navbar .container a.action:hover {
+    background-color: #110f36;
+    border: none;
+    color: white;
+}
+
+.logo img {
+    width: 90px;
+    transform: translateY(10px);
+}
+.line {
+    width: 40px;
+    height: 2px;
+    background-color: #007bff;
+    position: relative;
+    top: -10px;
+    left: 30%;
+    
+}
+a.burger .lines {
+    width: 30px;
+    height: 2px;
+    background-color: #6083F0;
+    position: relative;
+    left: 85%; 
+    display: none;
+    
+}
+.burger .lines_1{
+    top: -35px; 
+}
+.burger .lines_2 {
+    top: -25px;
+}
+.burger .lines_3{
+    top: -15px;
+} 
+
+.animation .circle-big {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color:#567DF4 ;
+    position: relative;
+    margin-left: 75%;
+   /* left: 900px;*/
+    top: -200px;
+    z-index: -1;
+}
+.animation .circle-small {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    
+    left: 75%;
+    top: -500px;
+    animation-name: circle-small;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes circle-small {
+0% {
+    left: 76%;
+     top: -600px
+}
+50% {
+     top: -400px;
+}
+100% {
+    left: 98%;
+}
+}
+
+.animation .circle-smm {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: #6083F0;
+    position: relative;
+    z-index: 1;
+    top: 210px;
+    left: 30px;
+
+    animation-name: circle-smm;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes circle-smm {
+0% {
+    left: 30px;
+     top: 210px
+}
+100% {
+    left: 35px;
+}
+}
+
+@media (max-width: 1280px) {
+.navbar .container {
+    width: 96%;
+}
+}
+@media (max-width: 980px) {
+    header {
+    background-color: #fff;
+    }
+    .navbar .container {
+        width: 92%;
+        height: 50px;
+    }
+    .navbar .container a.item,
+    .navbar .container a.action {
+        display: none;
+    }
+
+    #navbar:target .container a.item,
+    #navbar:target .container a.action {
+        background-color: white;
+        display: block;
+       /* width: 900px;*/
+        grid-column-start: 1;
+        text-align: left;
+        padding-left: 25%;
+        border: none;
+    }
+   .navbar .container a.action:hover {
+        color: #6083F0;
+    }
+   .line {
+       position: absolute;
+       z-index: 1;
+       top: 90px;
+       left: 8%;
+       width: 80%;
+   }
+   .animation{
+       display: none;
+   }
+
+   
+   a.burger .lines{
+       display: block;
+   }
+   
+#navbar:target  a.burger .lines{
+       display: none;
+   }
+  a.anti-burger .lines {
+      position: relative;
+      width: 25px;
+      height: 1px;
+      background-color: #567DF4;
+      left:85%;
+      display: none;
+       
+   }
+   a.anti-burger .lines_4 {
+   transform: rotate(45deg) translateY(8px) translateX(10px);
+   top: -31px;
+   }
+  a.anti-burger .lines_5 {
+       transform: rotate(-45deg);
+       top: -20px;
+   }
+  
+   #navbar:target a.anti-burger .lines {
+       display: block;
+   }
+
+
+
+
+    }
